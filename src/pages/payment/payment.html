@@ -1,0 +1,17 @@
+
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Proof of Payment</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+ 
+  <button ion-button block color="secondary" (click)="clickPayment()">Take Picture</button>
+  <button ion-button block color="primary" (click)="clickSend()">Send Picture</button>
+  <img [src]="pic">
+  
+</ion-content>

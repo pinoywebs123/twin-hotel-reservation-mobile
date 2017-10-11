@@ -1,0 +1,34 @@
+<!--
+  Generated template for the CatRoomPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Room List</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  
+  <div *ngIf="rooms">
+    <h2 text-center>{{rooms.category.category_name}}</h2>
+     
+
+    <ion-card *ngFor="let one of rooms.data">
+        <ion-card-header text-center>
+            <h2>Room: {{one.room_number}}</h2>
+        </ion-card-header>
+        <ion-card-content text-center>
+         
+          
+          <button ion-button round color="primary" (click)="clickBook(one.room_number)">Book</button>
+        </ion-card-content>
+      </ion-card>
+  </div>
+  
+</ion-content>

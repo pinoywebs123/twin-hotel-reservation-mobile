@@ -1,0 +1,37 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Twin Hotel</ion-title>
+
+    <ion-buttons end>
+        <button ion-button icon-only color="royal" (click)="clickHome()">
+          <ion-icon name="md-home"></ion-icon>
+        </button>
+      </ion-buttons>
+  </ion-navbar>
+  
+
+</ion-header>
+
+
+<ion-content padding>
+    <p text-center><img src="image/hotel.png" width="120px"></p>
+    <ion-item>
+        <ion-label floating>Username</ion-label>
+        <ion-input type="text" [(ngModel)]="username" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Password</ion-label>
+        <ion-input type="password" [(ngModel)]="password" required></ion-input>
+      </ion-item>
+
+      <button ion-button block (click)="clickSubmit()">Sign In</button>
+      <button ion-button block color="secondary" (click)="clickRegister()">Sign Up</button>
+</ion-content>

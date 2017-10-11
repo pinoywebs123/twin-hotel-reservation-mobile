@@ -1,0 +1,29 @@
+
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>My Activity List</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+   <div *ngIf="activity">
+      <ion-card *ngFor="let act of activity.activity">
+          <ion-card-header>
+           <h2 text-center><strong>{{act.room.category.category_name}}</strong></h2>
+          </ion-card-header>
+          <ion-card-content>
+              <ion-item>Check-in time:  {{act.check_in_time}}</ion-item>
+            <ion-item>Check-in date:  {{act.check_in}}</ion-item>
+            <ion-item>Check-out date:  {{act.check_out}}</ion-item>
+            <ion-item>Price:  {{act.room.category.price}}</ion-item>
+            <ion-item>Date:  {{act.created_at}}</ion-item>
+            <ion-item>Bill:  {{act.bill}}</ion-item>
+            <button ion-button block (click)="clickPayment(act.id)">Upload Proof Receipt</button>
+            <button ion-button block color="secondary" (click)="clickCancel(act.id)">Cancel</button>
+          </ion-card-content>
+        </ion-card>
+   </div>
+</ion-content>

@@ -1,0 +1,49 @@
+<!--
+  Generated template for the SettingsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Settings</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div *ngIf="settings">
+        <ion-card>
+            <ion-card-header>
+                <ion-item-group>
+                    <ion-item-divider color="light" text-center>My Profile</ion-item-divider>
+                  </ion-item-group>
+            </ion-card-header>
+            <ion-card-content>
+                <ion-item-group>
+                    <ion-item>Username: {{settings.username}}</ion-item>
+                    <ion-item>Name: {{settings.fname}} {{settings.lname}}</ion-item>
+                    <ion-item>Email: {{settings.email}}</ion-item>
+                  </ion-item-group>
+            </ion-card-content>
+          </ion-card>
+    </div>
+    <br>
+    <h3 text-center>Change Password</h3>
+    <ion-list>
+         
+          <ion-item>
+            <ion-label floating>New Password</ion-label>
+            <ion-input type="password" [(ngModel)]="new_pass" maxlength="12"></ion-input>
+          </ion-item>
+        
+          <ion-item>
+            <ion-label floating>Repeat Password</ion-label>
+            <ion-input type="password" [(ngModel)]="repeat_pass" maxlength="12"></ion-input>
+          </ion-item>
+        
+        </ion-list>
+        <button ion-button color="primary" block (click)="clickChange()">SUBMIT</button>
+</ion-content>

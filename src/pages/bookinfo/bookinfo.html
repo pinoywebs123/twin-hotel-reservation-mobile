@@ -1,0 +1,91 @@
+<!--
+  Generated template for the BookinfoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Booking Information</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+      <ion-item>
+        <ion-label text>Check-in Time</ion-label>
+        <ion-input type="time" [(ngModel)]="check_in_time" ></ion-input>
+        
+      </ion-item>
+      <ion-item>
+        <ion-label text>Check-in</ion-label>
+        <ion-datetime displayFormat="MMM DD, YYYY" [(ngModel)]="check_in" min="{{min}}"></ion-datetime>
+        
+      </ion-item>
+
+      <ion-item>
+        <ion-label text>Check-out</ion-label>
+        <ion-datetime displayFormat="MMM DD, YYYY" [(ngModel)]="check_out" min="{{min}}"></ion-datetime>
+        
+      </ion-item>
+
+      
+
+        <ion-list>
+            <ion-item>
+              <ion-label>Occupants No.</ion-label>
+              <ion-select [(ngModel)]="occupants">
+                <ion-option value="1">1</ion-option>
+                <ion-option value="2">2</ion-option>
+                <ion-option value="3">3</ion-option>
+                <ion-option value="4">4</ion-option>
+                <ion-option value="5">5</ion-option>
+                
+              </ion-select>
+            </ion-item>
+          </ion-list>
+      
+      
+      
+      <p text-center><button ion-button (click)="clickCalculate()">Confirm</button></p>
+      
+     
+
+
+        <!-- <h3 text-center>List of amenities</h3>
+        <ion-list>
+          <ion-item-sliding *ngFor="let one of amenities">
+            <ion-item>
+              <ion-avatar item-start>
+                <img src="image/drink.png">
+              </ion-avatar>
+              <h2>{{one.amenities_name}}</h2>
+              <h4>{{one.quantity}}</h4>
+            </ion-item>
+            <ion-item-options side="left">
+              <button ion-button color="primary">
+                <ion-icon name="text"></ion-icon>
+                More
+              </button>
+              <button ion-button color="secondary">
+                <ion-icon name="call"></ion-icon>
+                Less
+              </button>
+            </ion-item-options>
+            
+          </ion-item-sliding>
+        </ion-list> -->
+
+
+        <ion-list >
+          <ion-item>
+            
+          </ion-item>
+        </ion-list>
+
+
+
+      
+</ion-content>

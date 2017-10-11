@@ -1,0 +1,14 @@
+{
+  "name": "hotel",
+  "app_id": "",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  },
+  "proxies": [
+    {
+      "path": "/api",
+      "proxyUrl": "https://twin-lodge.000webhostapp.com/api/"
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+<ion-header>
+  <ion-toolbar  color="primary">
+
+      
+       
+
+    <ion-title>Twin Hotel</ion-title>
+    
+    <ion-buttons end>
+      <button ion-button icon-only color="royal" (click)="logout()">
+        <ion-icon name="md-power"></ion-icon>
+      </button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="card-background-page">
+  <div padding>
+    <ion-segment [(ngModel)]="hotel">
+      <ion-segment-button value="room">
+        Room Category
+      </ion-segment-button>
+      <ion-segment-button value="tariff">
+        Tariff Rate
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+  
+  <div [ngSwitch]="hotel">
+    <ion-list *ngSwitchCase="'room'">
+      <div *ngIf="cat">
+        <ion-card *ngFor="let one of cat" (click)="clickCat(one.id,one.price)">
+          <img src="image/{{one.id}}.png"/>
+          <div class="card-title">{{one.category_name}}</div>
+         
+          <div class="card-subtitle">{{one.person}} Persons <br><br><br>{{one.description}}</div>
+          
+        </ion-card>     
+      </div>
+    </ion-list>
+  
+    <ion-list *ngSwitchCase="'tariff'">
+      <div *ngIf="cat">
+          <ion-list>
+              <ion-item *ngFor="let one of cat">
+                <ion-icon name="ios-book-outline" item-start></ion-icon>
+                {{one.category_name}}
+                <ion-icon name="rose" item-end>{{one.price}}</ion-icon>
+              </ion-item>
+            </ion-list>
+  
+      </div>
+    </ion-list>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="primary">
+    <ion-buttons start>
+      <button ion-button icon-only color="royal" (click)="myReserve()">
+        Activity
+        <ion-icon name="md-cart"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-buttons end (click)="mySetting()">
+      <button ion-button icon-right color="royal">
+        Settings
+        <ion-icon name="md-settings"></ion-icon>
+      </button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-footer>
